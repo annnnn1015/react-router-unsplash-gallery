@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="Container">
       <Routes>
-        <Route path="/"></Route>
+        <Route path="/" element={<Navbar />}></Route>
       </Routes>
     </div>
   );
