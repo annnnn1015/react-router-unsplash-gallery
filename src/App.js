@@ -2,7 +2,9 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <div className="Container">
-      <Routes></Routes>
+      <Routes>
+        <Route path="/"></Route>
+      </Routes>
     </div>
   );
 }
