@@ -25,9 +25,9 @@ export default function Navbar() {
               </Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                Link
-              </a>
+              <Link className="nav-link" to="/about">
+                About
+              </Link>
             </li>
             <li class="nav-item dropdown">
               <a
