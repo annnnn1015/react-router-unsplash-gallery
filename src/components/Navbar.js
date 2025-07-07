@@ -29,6 +29,11 @@ export default function Navbar() {
                 About
               </Link>
             </li>
+            <li class="nav-item">
+              <Link className="nav-link" to="/album">
+                Album
+              </Link>
+            </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
