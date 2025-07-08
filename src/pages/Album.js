@@ -31,10 +31,19 @@ export default function Album() {
   }, [list]);
 
   return (
-    <div className="row">
-      <div className="col">選單</div>
-      <div className="col">
-        <Outlet />
+    <div className="container pt-3">
+      <div className="row">
+        <div className="col-4">
+          選單
+          <ul>
+            {list.map((item) => {
+              return <li>{item.id}</li>;
+            })}
+          </ul>
+        </div>
+        <div className="col-8">
+          <Outlet />
+        </div>
       </div>
     </div>
   );
