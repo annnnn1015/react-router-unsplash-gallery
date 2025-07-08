@@ -34,7 +34,7 @@ export default function Album() {
     <div className="container pt-3">
       <div className="row">
         <div className="col-4">
-          選單
+          <h1>選單</h1>
           <ul>
             {list.map((item) => {
               return <li>{item.id}</li>;
@@ -42,7 +42,7 @@ export default function Album() {
           </ul>
         </div>
         <div className="col-8">
-          <Outlet />
+          <Outlet context={list} />
         </div>
       </div>
     </div>
