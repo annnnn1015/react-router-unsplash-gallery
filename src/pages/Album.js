@@ -16,9 +16,19 @@ export default function Album() {
         `${api}?client_id=${accessId}&query=animal`
       );
       // query=animal 意思是搜尋關鍵字為animal
-      console.log(response);
+
+      // 資料路徑：response.data.results
+      // 解構response.data 取得results
+      const { results } = response.data;
+      // console.log(results);
+      // 存入狀態
+      setList(results);
     })();
   }, []);
+
+  useEffect(() => {
+    console.log(list);
+  }, [list]);
 
   return (
     <div className="row">
