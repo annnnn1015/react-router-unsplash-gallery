@@ -7,14 +7,14 @@ const accessId = process.env.REACT_APP_UNSPLASH_ACCESS;
 
 export default function AlbumSearch() {
   const [search, setSearch] = useState("animal");
-  const [photos, setPhotos] = useState(null);
+  const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
     (async () => {
       const res = await axios.get(
         `${api}/search/photos?client_id=${accessId}&query=${search}`
       );
-      setPhotos(res.data.results);
+      setPhotos(res?.data?.results);
     })();
   }, [search]);
 
