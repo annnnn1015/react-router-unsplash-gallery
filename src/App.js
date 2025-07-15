@@ -3,6 +3,7 @@ import About from "./pages/About";
 import Album from "./pages/Album";
 import AlbumIndex from "./pages/AlbumIndex";
 import AlbumPage from "./pages/AlbumPage";
+import AlbumSearch from "./pages/AlbumSearch";
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/about" element={<About />}></Route>
           <Route path="/album" element={<Album />}>
             <Route index element={<AlbumIndex />}></Route>
+            <Route path="search" element={<AlbumSearch />}></Route>
             <Route path=":id" element={<AlbumPage />}></Route>
           </Route>
         </Routes>
