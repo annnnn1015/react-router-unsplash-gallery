@@ -35,7 +35,7 @@ export default function AlbumSearch() {
         {photos.map((item) => {
           return (
             <li key={item.id} className="mb-1">
-              <Link to={item.id}>{item.id}</Link>
+              <Link to={`/album/${item.id}`}>{item.id}</Link>
               <img
                 src={item.urls.thumb}
                 alt={item.alt_description}
