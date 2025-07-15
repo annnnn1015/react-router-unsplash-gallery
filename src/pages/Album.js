@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -37,7 +37,11 @@ export default function Album() {
           <h1>選單</h1>
           <ul>
             {list.map((item) => {
-              return <li>{item.id}</li>;
+              return (
+                <li>
+                  <Link to={`/album/${item.id}`}>{item.id}</Link>
+                </li>
+              );
             })}
           </ul>
         </div>
