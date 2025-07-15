@@ -36,6 +36,9 @@ export default function Album() {
         <div className="col-4">
           <h1>選單</h1>
           <ul>
+            <li>
+              <Link to="search">搜尋圖片</Link>
+            </li>
             {list.map((item) => {
               return (
                 <li key={item.id}>
