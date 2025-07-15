@@ -38,7 +38,7 @@ export default function Album() {
           <ul>
             {list.map((item) => {
               return (
-                <li>
+                <li key={item.id}>
                   <Link to={`/album/${item.id}`}>{item.id}</Link>
                 </li>
               );
