@@ -12,12 +12,12 @@ export default function AlbumPage() {
   // 可以查看內容
   // console.log(api, accessId);
 
-  const [photoData, setPhoteData] = useState({});
+  const [photoData, setPhotoData] = useState({});
 
   useEffect(() => {
     (async () => {
       const res = await axios.get(`${api}/photos/${id}?client_id=${accessId}`);
-      setPhoteData(res.data);
+      setPhotoData(res.data);
     })();
   }, [id]);
 
@@ -29,7 +29,7 @@ export default function AlbumPage() {
           <li>圖片ID:{id}</li>
           <li>描述：{photoData.description}</li>
           <li>
-            <img src={photoData.urls.small} alt={photoData.alt_description} />
+            <img src={photoData?.urls?.small} alt={photoData.alt_description} />
           </li>
         </ul>
       </div>
