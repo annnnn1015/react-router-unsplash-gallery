@@ -1,7 +1,21 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+const api = process.env.REACT_APP_BASE_URL;
+const accessId = process.env.REACT_APP_UNSPLASH_ACCESS;
 
 export default function AlbumSearch() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("animal");
+  const [photos, setPhotos] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const res = await axios.get(
+        `${api}/search/photos?client_id=${accessId}&query=${search}`
+      );
+      setPhotos(res.data.results);
+    })();
+  }, [search]);
 
   return (
     <div>
