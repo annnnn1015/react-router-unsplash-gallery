@@ -8,7 +8,7 @@ export default function AlbumIndex() {
       <h1>相簿首頁</h1>
       <ul>
         {list.map((item) => {
-          return <li>{item.id}</li>;
+          return <li key={item.id}>{item.id}</li>;
         })}
       </ul>
     </div>
