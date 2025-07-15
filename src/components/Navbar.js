@@ -3,9 +3,7 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Navbar
-        </a>
+        <h1 className="navbar-brand">Navbar</h1>
         <button
           className="navbar-toggler"
           type="button"
@@ -35,40 +33,33 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <a
+              <span
                 className="nav-link dropdown-toggle"
-                href="#"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Dropdown
-              </a>
+              </span>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
+                  <button className="dropdown-item">Action</button>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
+                  <button className="dropdown-item">Another action</button>
                 </li>
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
+                  <button className="dropdown-item">Something else here</button>
                 </li>
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
+              <button className="nav-link disabled" aria-disabled="true">
                 Disabled
-              </a>
+              </button>
             </li>
           </ul>
           <form className="d-flex" role="search">
