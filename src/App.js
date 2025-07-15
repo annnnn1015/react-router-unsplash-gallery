@@ -15,7 +15,7 @@ function App() {
           <Route path="/about" element={<About />}></Route>
           <Route path="/album" element={<Album />}>
             <Route index element={<AlbumIndex />}></Route>
-            <Route path="/album/:id" element={AlbumPage}></Route>
+            <Route path=":id" element={<AlbumPage />}></Route>
           </Route>
         </Routes>
       </div>
