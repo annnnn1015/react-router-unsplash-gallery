@@ -6,7 +6,8 @@ const api = process.env.REACT_APP_BASE_URL;
 const accessId = process.env.REACT_APP_UNSPLASH_ACCESS;
 
 export default function AlbumSearch() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(""); // 發API用的關鍵字
+  const [inputValue, setInputValue] = useState(""); // 輸入框顯示的關鍵字
   const [photos, setPhotos] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -16,7 +17,9 @@ export default function AlbumSearch() {
 
   // 將query的值存入search以觸發請求
   useEffect(() => {
-    setSearch(searchParams.get("query") || ""); //　確保沒有query參數時不會變成null
+    const queryParam = searchParams.get("query") || ""; //　確保沒有query參數時不會變成null
+    setSearch(queryParam); // 更新發API用的關鍵字
+    setInputValue(queryParam); // 同時更新輸入框的關鍵字
   }, [searchParams]);
 
   useEffect(() => {
@@ -27,6 +30,8 @@ export default function AlbumSearch() {
         );
         setPhotos(res?.data?.results);
       })();
+    } else {
+      setPhotos([]);
     }
   }, [search]);
 
@@ -36,8 +41,8 @@ export default function AlbumSearch() {
       <input
         type="text"
         className="form-control"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)} // 單純切換輸入框文字
         onKeyUp={(e) => {
           if (e.code === "Enter") {
             // setSearch(e.target.value);
