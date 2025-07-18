@@ -6,7 +6,7 @@ const api = process.env.REACT_APP_BASE_URL;
 const accessId = process.env.REACT_APP_UNSPLASH_ACCESS;
 
 export default function AlbumSearch() {
-  const [search, setSearch] = useState("animal");
+  const [search, setSearch] = useState("");
   const [photos, setPhotos] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
