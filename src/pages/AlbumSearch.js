@@ -16,7 +16,7 @@ export default function AlbumSearch() {
 
   // 將query的值存入search以觸發請求
   useEffect(() => {
-    setSearch(searchParams.get("query"));
+    setSearch(searchParams.get("query") || ""); //　確保沒有query參數時不會變成null
   }, [searchParams]);
 
   useEffect(() => {
