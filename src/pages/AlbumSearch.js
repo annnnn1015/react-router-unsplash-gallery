@@ -11,8 +11,13 @@ export default function AlbumSearch() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    console.log(searchParams.get("query"));
+    console.log(searchParams.get("query")); // 測試取得網址列query的值
   }, [search]);
+
+  // 將query的值存入search以觸發請求
+  useEffect(() => {
+    setSearch(searchParams.get("query"));
+  }, [searchParams]);
 
   useEffect(() => {
     (async () => {
@@ -21,7 +26,7 @@ export default function AlbumSearch() {
       );
       setPhotos(res?.data?.results);
     })();
-  }, [searchParams]);
+  }, [search]);
 
   return (
     <div>
