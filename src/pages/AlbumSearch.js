@@ -20,12 +20,14 @@ export default function AlbumSearch() {
   }, [searchParams]);
 
   useEffect(() => {
-    (async () => {
-      const res = await axios.get(
-        `${api}/search/photos?client_id=${accessId}&query=${search}`
-      );
-      setPhotos(res?.data?.results);
-    })();
+    if (search !== "") {
+      (async () => {
+        const res = await axios.get(
+          `${api}/search/photos?client_id=${accessId}&query=${search}`
+        );
+        setPhotos(res?.data?.results);
+      })();
+    }
   }, [search]);
 
   return (
@@ -34,7 +36,8 @@ export default function AlbumSearch() {
       <input
         type="text"
         className="form-control"
-        defaultValue={search}
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
         onKeyUp={(e) => {
           if (e.code === "Enter") {
             // setSearch(e.target.value);
