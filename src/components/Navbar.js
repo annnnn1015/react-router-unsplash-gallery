@@ -29,7 +29,13 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/about">
+              <NavLink
+                className="nav-link"
+                to="/about"
+                style={({ isActive }) => {
+                  return { color: isActive ? "red" : "" };
+                }}
+              >
                 About
               </NavLink>
             </li>
