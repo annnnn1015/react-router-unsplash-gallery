@@ -20,7 +20,7 @@ export default function Navbar() {
             <li className="nav-item">
               <NavLink
                 className={({ isActive }) => {
-                  return `nav-link ${isActive ? "NewActive" : ""}`;
+                  return `nav-link ${isActive ? "newActive" : ""}`;
                 }}
                 aria-current="page"
                 to="/"
