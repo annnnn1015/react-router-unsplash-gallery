@@ -1,4 +1,6 @@
 import { useOutletContext } from "react-router-dom";
+import List from "../components/List";
+
 export default function AlbumIndex() {
   const list = useOutletContext();
   console.log("AlbumIndex:", list);
@@ -7,9 +9,7 @@ export default function AlbumIndex() {
     <div>
       <h1>相簿首頁</h1>
       <ul>
-        {list.map((item) => {
-          return <li key={item.id}>{item.id}</li>;
-        })}
+        <List list={list} />
       </ul>
     </div>
   );

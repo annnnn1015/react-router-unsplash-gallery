@@ -1,6 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import List from "../components/List";
 
 const api = "https://api.unsplash.com/search/photos";
 const accessId = process.env.REACT_APP_UNSPLASH_ACCESS;
@@ -39,13 +40,7 @@ export default function Album() {
             <li>
               <Link to="search">搜尋圖片</Link>
             </li>
-            {list.map((item) => {
-              return (
-                <li key={item.id}>
-                  <Link to={`/album/${item.id}`}>{item.id}</Link>
-                </li>
-              );
-            })}
+            <List list={list} />
           </ul>
         </div>
         <div className="col-8">
