@@ -5,6 +5,7 @@ import AlbumIndex from "./pages/AlbumIndex";
 import AlbumPage from "./pages/AlbumPage";
 import AlbumSearch from "./pages/AlbumSearch";
 import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 import "./style.css";
 import { Routes, Route } from "react-router-dom";
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="search" element={<AlbumSearch />}></Route>
             <Route path=":id" element={<AlbumPage />}></Route>
           </Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </div>
     </div>
